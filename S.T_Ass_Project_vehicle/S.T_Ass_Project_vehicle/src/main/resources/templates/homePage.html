@@ -1,0 +1,91 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--  <meta charset="UTF-8"/>-->
+<!--  <title>List of Cars</title>-->
+<!--  <style>-->
+<!--    dd{-->
+<!--      text-align: center;-->
+<!--    }-->
+<!--  </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1>List of Vehicles</h1>-->
+<!--<table>-->
+<!--  <thead>-->
+<!--  <div >-->
+<!--  <center><a  th:href="@{/add}">Add Vehicle</a>-->
+<!--&lt;!&ndash;    <a th:href="@{/view}">View Vehicle</a>&nbsp;&nbsp;&nbsp;&nbsp;&ndash;&gt;-->
+<!--  </center> </div>-->
+<!--  <tr>-->
+<!--    <th> Plate_no</th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+<!--    <th>Names</th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+<!--    <th>Type</th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+<!--    <th>Model</th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+<!--    <th>Actions</th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+<!--  </tr>-->
+<!--  </thead>-->
+<!--  <tbody>-->
+<!--  <tr th:each="vehicle : ${vehi}">-->
+<!--    <td th:text="${vehicle.plateNo}"></td>-->
+<!--    <td th:text="${vehicle.name}"></td>-->
+<!--    <td th:text="${vehicle.type}"></td>-->
+<!--    <td th:text="${vehicle.model}"></td>-->
+
+<!--    <td>-->
+<!--      <a th:href="@{/edit(id=${md.plateNo})}">edit</a>-->
+<!--      <a th:href="@{/delete(id=${md.plateNo})}">Delete</a>-->
+<!--    </td>-->
+<!--  </tr>-->
+<!--  </tbody>-->
+<!--</table>-->
+
+<!--</body>-->
+<!--</html>-->
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Home Page</title>
+</head>
+<body>
+<div>
+<!--  <a th:href="@{/registration}">Add Student</a> &nbsp;&nbsp;&nbsp;&nbsp;-->
+  <center> <a th:href="@{/view}">View Vehicle</a>&nbsp;&nbsp;&nbsp;&nbsp;
+  <a  th:href="@{/add}">Add Vehicle</a></center>
+
+  <!--  <a th:href="@{/searchPage}">View Student</a> -->
+
+</div><br>
+<center>
+<table>
+  <tr>
+    <th>PLATE &nbsp;&nbsp;&nbsp;&nbsp;</th>
+    <th>Name &nbsp;&nbsp;&nbsp;&nbsp;</th>
+    <th>TYPE &nbsp;&nbsp;&nbsp;&nbsp;</th>
+    <th>MODEL &nbsp;&nbsp;&nbsp;&nbsp;</th>
+    <th>Action</th>
+  </tr>
+
+      <tr th:each="vehicle : ${vehi}">
+        <td th:text="${vehicle.plateNo}"></td>
+        <td th:text="${vehicle.name}"></td>
+        <td th:text="${vehicle.type}"></td>
+        <td th:text="${vehicle.model}"></td>
+
+    <td>
+
+        <a th:href="@{/edit(plateNo=${vehicle.plateNo})}">edit</a>
+        <a th:href="@{/delete(plateNo=${vehicle.plateNo})}">Delete</a>
+    </td>
+  </tr>
+</table>
+</center>
+</body>
+</html>
+
