@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>opa fion</title>
+</head>
+<body>
+<p th:text="${erro}"></p>
+<form th:action="@{/login}" method="post">
+  Name: <input type="text" name="name"/>
+  Password: <input type="password" name="password"/>
+  <input type="submit" value="login"/>
+</form>
+</body>
+</html>
